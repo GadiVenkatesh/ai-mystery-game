@@ -1,75 +1,56 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Apartment 804 — AI Mystery</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Apartment 804 — AI Mystery</title><link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="topbar">
-    <div><span class="eyebrow">AI MYSTERY // CASE 001</span><h1>Apartment 804</h1></div>
-    <div class="status">CASE OPEN</div>
-  </header>
+<div class="noise"></div>
+<header class="topbar">
+  <div class="brand"><div class="brand-mark">✦</div><div><span class="eyebrow">NIGHTFALL INVESTIGATIONS</span><h1>APARTMENT <em>804</em></h1></div></div>
+  <div class="top-right"><div class="live"><i></i> LIVE CASE</div><div class="timer"><span>⏱</span><b id="timer">15:00</b></div></div>
+</header>
 
-  <main class="layout">
-    <section class="case card">
-      <div class="section-title"><span>01</span> INCIDENT</div>
-      <h2>The missing drive</h2>
-      <p>At 11:42 PM, a confidential prototype disappeared from Apartment 804. Five people were inside the building. Someone is lying.</p>
-      <div class="stats">
-        <div><b id="questions">0</b><small>Questions</small></div>
-        <div><b id="evidenceCount">0</b><small>Evidence</small></div>
-        <div><b id="score">0</b><small>Score</small></div>
-      </div>
-    </section>
+<main>
+<section class="hero card">
+  <div class="hero-copy">
+    <span class="case-tag">CASE 001 · THE MISSING DRIVE</span>
+    <h2>Someone in this building<br><span>is lying to you.</span></h2>
+    <p>A confidential prototype vanished from Apartment 804 at 11:42 PM. Five people were nearby. Every answer changes what you know.</p>
+    <div class="hero-stats"><div><b id="questions">0</b><small>questions asked</small></div><div><b id="evidenceCount">0</b><small>clues found</small></div><div><b id="score">0</b><small>investigation score</small></div></div>
+  </div>
+  <div class="scene">
+    <div class="moon"></div><div class="building"><span>8</span><span class="lit">0</span><span>4</span></div>
+    <div class="window w1"></div><div class="window w2"></div><div class="window w3"></div>
+    <div class="scene-label">HYDERABAD · 11:42 PM</div>
+  </div>
+</section>
 
-    <aside class="card suspects">
-      <div class="section-title"><span>02</span> SUSPECTS</div>
-      <div id="suspects"></div>
-    </aside>
+<section class="game-grid">
+<aside class="card suspects">
+  <div class="section-head"><span>01</span><div><b>PEOPLE OF INTEREST</b><small>Watch their behavior</small></div></div>
+  <div id="suspects"></div>
+</aside>
 
-    <section class="card interview">
-      <div class="section-title"><span>03</span> INTERVIEW ROOM</div>
-      <div id="chat" class="chat">
-        <div class="bubble system">You have 15 minutes. Ask questions, inspect evidence, then accuse one suspect.</div>
-      </div>
-      <div class="quick" id="quickQuestions">
-        <button data-q="Where were you at 11:42 PM?">Where were you?</button>
-        <button data-q="What do you know about the missing drive?">The missing drive?</button>
-        <button data-q="Did you have access to Apartment 804?">Access to 804?</button>
-      </div>
-      <div class="composer">
-        <input id="questionInput" placeholder="Ask the suspect anything..." autocomplete="off">
-        <button id="askBtn">Ask</button>
-      </div>
-    </section>
+<section class="card interview">
+  <div class="section-head"><span>02</span><div><b>INTERROGATION ROOM</b><small id="interviewMeta">Select a suspect to begin</small></div><div class="pulse">● RECORDING</div></div>
+  <div class="conversation" id="chat"><div class="welcome"><strong>Detective's notebook</strong><p>Ask anything. The best investigators don't just ask questions — they notice contradictions.</p></div></div>
+  <div class="quick" id="quickQuestions"></div>
+  <div class="composer"><input id="questionInput" placeholder="Ask a question..." autocomplete="off"><button id="askBtn">SEND <span>↵</span></button></div>
+</section>
 
-    <aside class="card evidence">
-      <div class="section-title"><span>04</span> EVIDENCE BOARD</div>
-      <div id="evidenceBoard" class="evidence-list">
-        <div class="empty">No evidence collected yet.</div>
-      </div>
-    </aside>
+<aside class="card evidence">
+  <div class="section-head"><span>03</span><div><b>EVIDENCE BOARD</b><small>Build your theory</small></div></div>
+  <div id="evidenceBoard"><div class="empty-evidence"><span>⌁</span><p>Nothing discovered yet.<br><small>Question suspects to uncover clues.</small></p></div></div>
+</aside>
+</section>
 
-    <section class="card accusation">
-      <div class="section-title"><span>05</span> FINAL ACCUSATION</div>
-      <p>When you are confident, name the person responsible.</p>
-      <div class="accuse-row">
-        <select id="accuseSelect"></select>
-        <button id="accuseBtn" class="danger">Make accusation</button>
-      </div>
-    </section>
-  </main>
+<section class="card accusation">
+ <div><div class="section-head"><span>04</span><div><b>MAKE YOUR CALL</b><small>One accusation. No take-backs.</small></div></div></div>
+ <div class="accuse-row"><select id="accuseSelect"></select><button id="accuseBtn">⚡ ACCUSE</button></div>
+</section>
+</main>
 
-  <dialog id="resultDialog">
-    <div class="result">
-      <span class="eyebrow">CASE RESULT</span>
-      <h2 id="resultTitle"></h2>
-      <p id="resultText"></p>
-      <button id="closeResult">Continue</button>
-    </div>
-  </dialog>
-  <script src="game.js"></script>
-</body>
-</html>
+<dialog id="resultDialog"><div class="result"><div id="resultIcon">✦</div><span class="eyebrow">CASE REPORT</span><h2 id="resultTitle"></h2><p id="resultText"></p><button id="closeResult">BACK TO INVESTIGATION</button></div></dialog>
+<script src="game.js"></script>
+</body></html>
