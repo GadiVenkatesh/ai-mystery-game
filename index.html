@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Apartment 804 — AI Mystery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div><span class="eyebrow">AI MYSTERY // CASE 001</span><h1>Apartment 804</h1></div>
+    <div class="status">CASE OPEN</div>
+  </header>
+
+  <main class="layout">
+    <section class="case card">
+      <div class="section-title"><span>01</span> INCIDENT</div>
+      <h2>The missing drive</h2>
+      <p>At 11:42 PM, a confidential prototype disappeared from Apartment 804. Five people were inside the building. Someone is lying.</p>
+      <div class="stats">
+        <div><b id="questions">0</b><small>Questions</small></div>
+        <div><b id="evidenceCount">0</b><small>Evidence</small></div>
+        <div><b id="score">0</b><small>Score</small></div>
+      </div>
+    </section>
+
+    <aside class="card suspects">
+      <div class="section-title"><span>02</span> SUSPECTS</div>
+      <div id="suspects"></div>
+    </aside>
+
+    <section class="card interview">
+      <div class="section-title"><span>03</span> INTERVIEW ROOM</div>
+      <div id="chat" class="chat">
+        <div class="bubble system">You have 15 minutes. Ask questions, inspect evidence, then accuse one suspect.</div>
+      </div>
+      <div class="quick" id="quickQuestions">
+        <button data-q="Where were you at 11:42 PM?">Where were you?</button>
+        <button data-q="What do you know about the missing drive?">The missing drive?</button>
+        <button data-q="Did you have access to Apartment 804?">Access to 804?</button>
+      </div>
+      <div class="composer">
+        <input id="questionInput" placeholder="Ask the suspect anything..." autocomplete="off">
+        <button id="askBtn">Ask</button>
+      </div>
+    </section>
+
+    <aside class="card evidence">
+      <div class="section-title"><span>04</span> EVIDENCE BOARD</div>
+      <div id="evidenceBoard" class="evidence-list">
+        <div class="empty">No evidence collected yet.</div>
+      </div>
+    </aside>
+
+    <section class="card accusation">
+      <div class="section-title"><span>05</span> FINAL ACCUSATION</div>
+      <p>When you are confident, name the person responsible.</p>
+      <div class="accuse-row">
+        <select id="accuseSelect"></select>
+        <button id="accuseBtn" class="danger">Make accusation</button>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="resultDialog">
+    <div class="result">
+      <span class="eyebrow">CASE RESULT</span>
+      <h2 id="resultTitle"></h2>
+      <p id="resultText"></p>
+      <button id="closeResult">Continue</button>
+    </div>
+  </dialog>
+  <script src="game.js"></script>
+</body>
+</html>
